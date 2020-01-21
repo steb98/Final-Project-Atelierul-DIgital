@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addTripName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Trip Name"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+            tools:layout_editor_absoluteX="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addTripDestination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Trip Destination"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RadioGroup
+
+            android:id="@+id/addTripType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayout1">
+
+            <TextView
+                android:id="@+id/TextViewButtonGroup"
+                style="@style/TextAppearance.AppCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trip Type: "
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayout1"></TextView>
+
+            <RadioButton
+                android:id="@+id/cityBreak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City Break" />
+
+            <RadioButton
+                android:id="@+id/seaSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sea Side" />
+
+            <RadioButton
+                android:id="@+id/mountains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mountains" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/TextViewSeekBar"
+            style="@style/TextAppearance.AppCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Price: "
+            app:layout_constraintBottom_toBottomOf="@+id/addTripPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addTripType">
+
+        </TextView>
+
+        <SeekBar
+
+            android:id="@+id/addTripPrice"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@+id/TextViewSeekBar"
+            app:layout_constraintTop_toBottomOf="@id/addTripType" />
+
+        <TextView
+            android:id="@+id/textStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Start date:"
+            android:textSize="25sp"
+            style="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintEnd_toEndOf="@+id/addTripStartDate"
+            app:layout_constraintStart_toStartOf="@+id/addTripStartDate"
+            app:layout_constraintTop_toBottomOf="@+id/addTripPrice"></TextView>
+
+        <TextView
+            android:id="@+id/addTripStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:descendantFocusability="blocksDescendants"
+            android:gravity="center"
+            android:hint="DD/MM/YYYY"
+            android:onClick="pickStartDate"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textStartDate" />
+
+        <TextView
+            android:id="@+id/textEndDate"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="End date:"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="@+id/addTripEndDate"
+            app:layout_constraintStart_toStartOf="@+id/addTripEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/addTripPrice"></TextView>
+
+        <TextView
+            android:id="@+id/addTripEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:gravity="center"
+            android:hint="DD/MM/YYYY"
+            android:onClick="pickEndDate"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/addTripStartDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textStartDate" />
+
+        <TextView
+            android:id="@+id/addMoneySliderText"
+            android:layout_width="76dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="0 $"
+            app:layout_constraintBottom_toBottomOf="@+id/addTripPrice"
+            app:layout_constraintStart_toEndOf="@+id/addTripPrice"
+            app:layout_constraintTop_toTopOf="@+id/addTripPrice" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick a Photo"
+            android:textSize="40sp"
+            style="@style/TextAppearance.AppCompat.Headline"
+            app:layout_constraintBottom_toTopOf="@+id/addTripImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/addTripImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="55dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toBottomOf="@+id/addTripEndDate"
+            app:srcCompat="@drawable/desert_image"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="takePhotoAddFragment"
+            android:text="Take a Photo"
+            app:layout_constraintStart_toStartOf="@+id/addTripImage"
+            app:layout_constraintTop_toBottomOf="@+id/addTripImage" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open Gallery"
+            android:onClick="selectPhotoAddFragment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button" />
+
+        <RatingBar
+            android:id="@+id/addTripRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Rate the Trip"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/addTripRating"
+            app:layout_constraintStart_toStartOf="@+id/addTripRating"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add trip"
+            android:onClick="addTripCLickEvent"
+            app:layout_constraintBottom_toBottomOf="@+id/addTripRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/addTripRating"
+            app:layout_constraintTop_toTopOf="@+id/addTripRating" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

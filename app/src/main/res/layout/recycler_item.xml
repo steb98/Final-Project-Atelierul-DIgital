@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/tripImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tripTitle"
+            app:srcCompat="@drawable/desert_image" />
+
+        <TextView
+            android:id="@+id/tripTitle"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="5dp"
+            android:text="Sahara weekend"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:id="@+id/tripDestination"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:text="New York City"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tripFav"
+            app:layout_constraintEnd_toEndOf="@+id/tripRating"
+            app:layout_constraintStart_toStartOf="@+id/tripRating"
+            app:layout_constraintTop_toTopOf="@+id/tripFav"></TextView>
+
+        <RatingBar
+            android:id="@+id/tripRating"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:clickable="false"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tripPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tripFav" />
+
+        <TextView
+            android:id="@+id/tripPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="400 "
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tripRating"
+            app:layout_constraintEnd_toStartOf="@+id/tripRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tripRating" />
+
+        <ImageView
+            android:id="@+id/tripFav"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/tripPrice"
+            app:layout_constraintStart_toStartOf="@+id/tripPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tripImage"
+            app:srcCompat="@drawable/ic_star_black_24dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
